@@ -1,0 +1,14 @@
+<h1 class="text-4xl font-bold">Todos list</h1>
+@if(todosStore.isLoading()) {
+<div class="loading loading-spinner text-3xl"></div>
+
+}@else {
+
+<app-dynamic-table
+  classlist="w-full"
+  [data]="todosStore.todos()"
+  [columns]="columns"
+  [pagination]="pagination()"
+>
+</app-dynamic-table>
+}
